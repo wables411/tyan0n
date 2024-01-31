@@ -38,19 +38,19 @@ export default async function (req: VercelRequest, res: VercelResponse) {
           <head>
             <meta charset="utf-8" />
             <meta name="viewport" content="width=device-width" />
-            <meta property="og:title" content="You've minted your commemorative NFT for Syndicate's Frame API!" />
+            <meta property="og:title" content="You've minted your commemorative NFT for Syndicate's FramedNouns API!" />
             <meta
               property="og:image"
-              content="https://syndicate-farcaster-frame-starter.vercel.app/img/example-frame-farcaster-cropped-minted.png"
+              content="https://bafkreifpsy4bihrgavched3dtdawei3xm4ab7sjbdgj6pve5nekypse2yy.ipfs.nftstorage.link"
             />
             <meta property="fc:frame" content="vNext" />
             <meta
               property="fc:frame:image"
-              content="https://syndicate-farcaster-frame-starter.vercel.app/img/example-frame-farcaster-cropped-minted.png"
+              content="https://bafkreifpsy4bihrgavched3dtdawei3xm4ab7sjbdgj6pve5nekypse2yy.ipfs.nftstorage.link"
             />
             <meta
               property="fc:frame:button:1"
-              content="You've minted your frame.syndicate.io commemorative NFT!"
+              content="You Just got Glizzied, Bruh!!"
             />
           </head>
         </html>
@@ -68,20 +68,20 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
-        <meta property="og:title" content="Mint your commemorative NFT for the launch of Syndicate's Frame API!" />
+        <meta property="og:title" content="Mint your commemorative NFT for the launch of Syndicate's Framed Nouns API!" />
         <meta
           property="og:image"
-          content="https://syndicate-farcaster-frame-starter.vercel.app/img/example-frame-farcaster-cropped.png"
+          content="https://bafkreifpsy4bihrgavched3dtdawei3xm4ab7sjbdgj6pve5nekypse2yy.ipfs.nftstorage.link"
         />
         <meta property="fc:frame" content="vNext" />
         <meta
           property="fc:frame:image"
-          content="https://syndicate-farcaster-frame-starter.vercel.app/img/example-frame-farcaster-cropped.png"
+          content="https://bafkreifpsy4bihrgavched3dtdawei3xm4ab7sjbdgj6pve5nekypse2yy.ipfs.nftstorage.link"
         />
-        <meta property="fc:frame:button:1" content="Mint your commemorative frame.syndicate.io NFT!" />
+        <meta property="fc:frame:button:1" content="Mint your commemorative Framed Noun NFT!" />
         <meta
           name="fc:frame:post_url"
-          content="https://syndicate-farcaster-frame-starter.vercel.app/api/syndicate-farcaster-frame-starter"
+          content="https://framed-nouns.vercel.app/api/syndicate-farcaster-frame-starter"
         />
       </head>
     </html>
