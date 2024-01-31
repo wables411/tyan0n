@@ -76,7 +76,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
         <meta property="fc:frame" content="vNext" />
         <meta
           property="fc:frame:image"
-          content="https://bafkreifpsy4bihrgavched3dtdawei3xm4ab7sjbdgj6pve5nekypse2yy.ipfs.nftstorage.link"
+          content="https://bafkreids6wmmnjqh4yxwm7fc37vfrvqhh75mh3agwjtz67eseh2ymzlmmu.ipfs.nftstorage.link/"
         />
         <meta property="fc:frame:button:1" content="Mint your commemorative Framed Noun NFT!" />
         <meta
