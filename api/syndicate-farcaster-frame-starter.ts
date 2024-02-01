@@ -38,19 +38,19 @@ export default async function (req: VercelRequest, res: VercelResponse) {
           <head>
             <meta charset="utf-8" />
             <meta name="viewport" content="width=device-width" />
-            <meta property="og:title" content="You've minted your commemorative NFT for Syndicate's FramedNouns API!" />
+            <meta property="og:title" content="You've minted Syndicate's commemorative Degen Mona Lisa!" />
             <meta
               property="og:image"
-              content="https://bafkreids6wmmnjqh4yxwm7fc37vfrvqhh75mh3agwjtz67eseh2ymzlmmu.ipfs.nftstorage.link"
+              content="https://bafybeigqyny4cmhelkmlzdoke2a4sy5fr2olitsnlzpotjqika4ahbhj4q.ipfs.nftstorage.link"
             />
             <meta property="fc:frame" content="vNext" />
             <meta
               property="fc:frame:image"
-              content="https://bafkreids6wmmnjqh4yxwm7fc37vfrvqhh75mh3agwjtz67eseh2ymzlmmu.ipfs.nftstorage.link"
+              content="https://bafybeigqyny4cmhelkmlzdoke2a4sy5fr2olitsnlzpotjqika4ahbhj4q.ipfs.nftstorage.link"
             />
             <meta
               property="fc:frame:button:1"
-              content="You Just got Glizzied, Bruh!!"
+              content="Did Degen Mona Lisa send Bobs?"
             />
           </head>
         </html>
@@ -68,20 +68,20 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
-        <meta property="og:title" content="Mint your commemorative NFT for the launch of Syndicate's Framed Nouns API!" />
+        <meta property="og:title" content="Mint Degen Mona Lisa!" />
         <meta
           property="og:image"
-          content="https://bafkreifpsy4bihrgavched3dtdawei3xm4ab7sjbdgj6pve5nekypse2yy.ipfs.nftstorage.link"
+          content="https://bafybeicrc4fvwwe2jvdzcbfw4ez3yzonfas7mcc2y4sx73snha74ofzaxy.ipfs.nftstorage.link"
         />
         <meta property="fc:frame" content="vNext" />
         <meta
           property="fc:frame:image"
-          content="https://bafkreifpsy4bihrgavched3dtdawei3xm4ab7sjbdgj6pve5nekypse2yy.ipfs.nftstorage.link/"
+          content="https://bafybeicrc4fvwwe2jvdzcbfw4ez3yzonfas7mcc2y4sx73snha74ofzaxy.ipfs.nftstorage.link"
         />
-        <meta property="fc:frame:button:1" content="Mint your commemorative Framed Noun NFT!" />
+        <meta property="fc:frame:button:1" content="Mint Degen Mona Lisa!" />
         <meta
           name="fc:frame:post_url"
-          content="https://framed-nouns.vercel.app/api/syndicate-farcaster-frame-starter"
+          content="https://degen-mona-lisa.vercel.app/api/syndicate-farcaster-frame-starter"
         />
       </head>
     </html>
