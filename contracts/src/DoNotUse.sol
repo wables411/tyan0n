@@ -7,10 +7,7 @@ import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 contract DegenLisa is ERC721 {
     uint256 currentTokenId = 0;
     mapping(address => bool) public hasMinted;
-    address royaltyReceiver; 
     constructor() ERC721("Degen Mona Lisa", "Degen Mona Lisa") {
-        royaltyReceiver=msg.sender;
-    }
 
     function mint() public {
         require(!hasMinted[msg.sender], "You have already minted an NFT.");
@@ -23,7 +20,7 @@ contract DegenLisa is ERC721 {
     // Every 10th NFT 
     if (tokenId % 10 == 0) {
         return "https://bafkreif7zy64fask5kl7krraijkkythjn5lcerzkvb3tbwwyryx7jjdcdu.ipfs.nftstorage.link";
-    } else if (tokenId % 4 == 0) {
+    } if (tokenId % 4 == 0) {
         // Every 5th NFT is some other type
         return "https://bafkreicwnltaxbqo6hwkqz5ptvizwch3urxu3rvqg7mmtlkyvynuqvh444.ipfs.nftstorage.link";
     } else if (tokenId % 3 == 0) {
