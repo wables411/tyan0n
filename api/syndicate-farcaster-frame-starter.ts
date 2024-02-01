@@ -1,36 +1,90 @@
-// SPDX-License-Identifier: MIT
+// Two very important environment variables to set that you MUST set in Vercel:
+// - SYNDICATE_FRAME_API_KEY: The API key that you received for frame.syndicate.io.
+// DM @Will on Farcaster/@WillPapper on Twitter to get an API key.
+import { VercelRequest, VercelResponse } from "@vercel/node";
 
-pragma solidity ^0.8.20;
+export default async function (req: VercelRequest, res: VercelResponse) {
+  // Farcaster Frames will send a POST request to this endpoint when the user
+  // clicks the button. If we receive a POST request, we can assume that we're
+  // responding to a Farcaster Frame button click.
+  if (req.method == "POST") {
+    try {
+      console.log("Received POST request from Farcaster Frame button click");
+      console.log("Farcaster Frame request body:", req.body);
+      console.log("Farcaster Frame trusted data:", req.body.trustedData);
+      console.log(
+        "Farcaster Frame trusted data messageBytes:",
+        req.body.trustedData.messageBytes
+      );
 
-import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
+      // Once your contract is registered, you can mint an NFT using the following code
+      const syndicateRes = await fetch("https://frame.syndicate.io/api/mint", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          Authorization: "Bearer " + process.env.SYNDICATE_FRAME_API_KEY,
+        },
+        body: JSON.stringify({
+          frameTrustedData: req.body.trustedData.messageBytes,
+        }),
+      });
 
-contract DegenLisa is ERC721 {
-    uint256 currentTokenId = 0;
-    mapping(address => bool) public hasMinted;
-    
-    constructor() ERC721("Degen Mona Lisa", "Degen Mona Lisa") {
+      console.log("Syndicate response:", syndicateRes);
+      console.log("Sending confirmation as Farcaster Frame response");
+
+      res.status(200).setHeader("Content-Type", "text/html").send(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width" />
+            <meta property="og:title" content="You've minted Syndicate's commemorative Degen Mona Lisa!" />
+            <meta
+              property="og:image"
+              content="https://bafybeigqyny4cmhelkmlzdoke2a4sy5fr2olitsnlzpotjqika4ahbhj4q.ipfs.nftstorage.link"
+            />
+            <meta property="fc:frame" content="vNext" />
+            <meta
+              property="fc:frame:image"
+              content="https://bafybeigqyny4cmhelkmlzdoke2a4sy5fr2olitsnlzpotjqika4ahbhj4q.ipfs.nftstorage.link"
+            />
+            <meta
+              property="fc:frame:button:1"
+              content="Did Degen Mona Lisa send Bobs?"
+            />
+          </head>
+        </html>
+      `);
+    } catch (error) {
+      res.status(500).send(`Error: ${error.message}`);
     }
-    function mint() public {
-        require(!hasMinted[msg.sender], "You have already minted an NFT.");
-        ++currentTokenId;
-        _mint(msg.sender, currentTokenId);
-        hasMinted[msg.sender] = true;
-    }
-
- function tokenURI(uint256 tokenId) public pure override returns (string memory) {
-    // Every 10th NFT 
-    if (tokenId % 10 == 0) {
-        return "https://bafkreif7zy64fask5kl7krraijkkythjn5lcerzkvb3tbwwyryx7jjdcdu.ipfs.nftstorage.link";
-    } else if (tokenId % 4 == 0) {
-        // Every 5th NFT is some other type
-        return "https://bafkreicwnltaxbqo6hwkqz5ptvizwch3urxu3rvqg7mmtlkyvynuqvh444.ipfs.nftstorage.link";
-    } else if (tokenId % 3 == 0) {
-        // Every 3rd NFT is Mona Lisa Holding her Hards Close to her Heart
-        return "https://bafkreieiguvxlgxk6b4nnf7rmxyjoivzsdqroqgu4ubdi6chua7reo3uhu.ipfs.nftstorage.link";
-    } else {
-        // All other NFTS are Degen Mona Lisa
-        return "https://bafkreiez3updzwhgqexlfx5tsd76b3cmtqoccuhmu4jxpbju6doeg74v6q.ipfs.nftstorage.link";
-    }
-}
+  } else {
+    // If the request is not a POST, we know that we're not dealing with a
+    // Farcaster Frame button click. Therefore, we should send the Farcaster Frame
+    // content
+    res.status(200).setHeader("Content-Type", "text/html").send(`
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta property="og:title" content="Mint Degen Mona Lisa!" />
+        <meta
+          property="og:image"
+          content="https://bafybeicrc4fvwwe2jvdzcbfw4ez3yzonfas7mcc2y4sx73snha74ofzaxy.ipfs.nftstorage.link"
+        />
+        <meta property="fc:frame" content="vNext" />
+        <meta
+          property="fc:frame:image"
+          content="https://bafybeicrc4fvwwe2jvdzcbfw4ez3yzonfas7mcc2y4sx73snha74ofzaxy.ipfs.nftstorage.link"
+        />
+        <meta property="fc:frame:button:1" content="Mint Degen Mona Lisa!" />
+        <meta
+          name="fc:frame:post_url"
+          content="https://degen-mona-lisa.vercel.app/api/syndicate-farcaster-frame-starter"
+        />
+      </head>
+    </html>
+    `);
+  }
 }
