@@ -65,28 +65,6 @@ contract DegenMonaLisa is ERC721, Ownable {
         _mint(to, currentTokenId);
     }
 
-    // This function is not yet supported in the frame.syndicate.io API
-    // We will update this example repository when it is supported!
-    function mint(address to, string memory _tokenURI) public onlyAuthorizedMinter onlyBelowMaxMint(to) {
-        ++currentTokenId;
-        ++mintCount[to];
-        tokenURIs[currentTokenId] = _tokenURI;
-        _mint(to, currentTokenId);
-
-        emit TokenURISet(currentTokenId, _tokenURI);
-    }
-
-    // This function is not yet supported in the frame.syndicate.io API
-    // We will update this example repository when it is supported!
-    function setTokenURI(uint256 tokenId, string memory _tokenURI)
-        public
-        onlyAuthorizedMinter
-        onlyUnlockedTokenURI(tokenId)
-    {
-        tokenURIs[tokenId] = _tokenURI;
-
-        emit TokenURISet(tokenId, _tokenURI);
-    }
 
     // Since this action is irreversible, we require the owner to call it
     function lockTokenURI(uint256 tokenId) public onlyOwner {
