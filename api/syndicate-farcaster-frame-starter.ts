@@ -41,7 +41,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
             <meta property="og:title" content="You've minted Syndicate's Based Mona Lisa!" />
             <meta
               property="og:image"
-              content="https://bafybeigqyny4cmhelkmlzdoke2a4sy5fr2olitsnlzpotjqika4ahbhj4q.ipfs.nftstorage.link"
+              content="https://bafybeicrxexpr4bfry44e7kweraanln4orwbhupz6uphaj2otbo6m4vksu.ipfs.nftstorage.link"
             />
             <meta property="fc:frame" content="vNext" />
             <meta
