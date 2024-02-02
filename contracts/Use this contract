@@ -7,7 +7,7 @@ pragma solidity ^0.8.20;
 import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
-contract DegenMonaLisa is ERC721, Ownable {
+contract BasedMonaLisa is ERC721, Ownable {
     uint256 public currentTokenId = 0;
     string public defaultURI;
 
@@ -44,7 +44,7 @@ contract DegenMonaLisa is ERC721, Ownable {
     // You can call `transferOwnership` to do this.
     constructor() ERC721("DegenMonaLisa", "DegenaLisa") Ownable(msg.sender) {
         // Update this with your own NFT collection's metadata
-        defaultURI = "ipfs://bafkreiez3updzwhgqexlfx5tsd76b3cmtqoccuhmu4jxpbju6doeg74v6q";
+        defaultURI = "ipfs://bafkreick6hptfg3qgm66kdkx4kscysmvxnsbgyy5vbv6y3bffzwmsth2qe";
         maxMintPerAddress = 1;
 
         // The deployer is set as an authorized minter, allowing them to set up
@@ -86,18 +86,18 @@ contract DegenMonaLisa is ERC721, Ownable {
     // If you'd prefer an ID-based structure, you can override this function to
     // enable that instead
     function tokenURI(uint256 tokenId) public view virtual override(ERC721) returns (string memory) {
-      // Every 10th NFT 
+      // Every 10th NFT is final boss
     if (tokenId % 10 == 0) {
-        return "ipfs://bafkreif7zy64fask5kl7krraijkkythjn5lcerzkvb3tbwwyryx7jjdcdu";
+        return "ipfs://bafkreig3v7zmsebfjnamn6txq4tlb43jgw4tsp3getqiwr2txq3w25yygu";
     } if (tokenId % 4 == 0) {
-        // Every 5th NFT is some other type
-        return "ipfs://bafkreicwnltaxbqo6hwkqz5ptvizwch3urxu3rvqg7mmtlkyvynuqvh444";
+        // Every 5th NFT is forgiving
+        return "ipfs://bafkreialyompcszmlfcbimmvcj5kn2dd5mxfzjgot3b43qi3kdodbfi44i";
     } else if (tokenId % 3 == 0) {
-        // Every 3rd NFT is Mona Lisa Holding her Hards Close to her Heart
-        return "ipfs://bafkreieiguvxlgxk6b4nnf7rmxyjoivzsdqroqgu4ubdi6chua7reo3uhu";
+        // Every 3rd NFT is chonky
+        return "ipfs://bafkreievi42keghrdnrhxjpztrzoe76aycmwivlmbgjrttvdvpymrff5le";
     } else {
-        // All other NFTS are Degen Mona Lisa
-        return "ipfs://bafkreiez3updzwhgqexlfx5tsd76b3cmtqoccuhmu4jxpbju6doeg74v6q";
+        // All other NFTS stare into your sol
+        return "ipfs://bafkreick6hptfg3qgm66kdkx4kscysmvxnsbgyy5vbv6y3bffzwmsth2qe";
     }
     }
     // Only the owner can set the max mint per address
