@@ -57,6 +57,36 @@ contract DegenMonaLisa is ERC721, Ownable {
         authorizeBaseMainnetSyndicateAPI();
     }
 
+    // This function is currently the only supported function in the
+    // frame.syndicate.io API
+    function mint(address to) public onlyAuthorizedMinter onlyBelowMaxMint(to) {
+        ++currentTokenId;
+        ++mintCount[to];
+        _mint(to, currentTokenId);
+    }
+
+    // This function is not yet supported in the frame.syndicate.io API
+    // We will update this example repository when it is supported!
+    function mint(address to, string memory _tokenURI) public onlyAuthorizedMinter onlyBelowMaxMint(to) {
+        ++currentTokenId;
+        ++mintCount[to];
+        tokenURIs[currentTokenId] = _tokenURI;
+        _mint(to, currentTokenId);
+
+        emit TokenURISet(currentTokenId, _tokenURI);
+    }
+
+    // This function is not yet supported in the frame.syndicate.io API
+    // We will update this example repository when it is supported!
+    function setTokenURI(uint256 tokenId, string memory _tokenURI)
+        public
+        onlyAuthorizedMinter
+        onlyUnlockedTokenURI(tokenId)
+    {
+        tokenURIs[tokenId] = _tokenURI;
+
+        emit TokenURISet(tokenId, _tokenURI);
+    }
 
     // Since this action is irreversible, we require the owner to call it
     function lockTokenURI(uint256 tokenId) public onlyOwner {
@@ -79,7 +109,7 @@ contract DegenMonaLisa is ERC721, Ownable {
     // If you'd prefer an ID-based structure, you can override this function to
     // enable that instead
     function tokenURI(uint256 tokenId) public view virtual override(ERC721) returns (string memory) {
-          // Every 10th NFT 
+   // Every 10th NFT 
     if (tokenId % 10 == 0) {
         return "https://bafkreif7zy64fask5kl7krraijkkythjn5lcerzkvb3tbwwyryx7jjdcdu.ipfs.nftstorage.link";
     } else if (tokenId % 4 == 0) {
@@ -92,8 +122,7 @@ contract DegenMonaLisa is ERC721, Ownable {
         // All other NFTS are Degen Mona Lisa
         return "https://bafkreiez3updzwhgqexlfx5tsd76b3cmtqoccuhmu4jxpbju6doeg74v6q.ipfs.nftstorage.link";
     }
-    
-}
+    }
 
     // Only the owner can set the max mint per address
     function setMaxMintPerAddress(uint256 _maxMintPerAddress) public onlyOwner {
