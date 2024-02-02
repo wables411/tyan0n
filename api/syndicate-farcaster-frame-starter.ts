@@ -38,7 +38,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
           <head>
             <meta charset="utf-8" />
             <meta name="viewport" content="width=device-width" />
-            <meta property="og:title" content="You've minted Syndicate's commemorative Degen Mona Lisa!" />
+            <meta property="og:title" content="You've minted Syndicate's Based Mona Lisa!" />
             <meta
               property="og:image"
               content="https://bafybeigqyny4cmhelkmlzdoke2a4sy5fr2olitsnlzpotjqika4ahbhj4q.ipfs.nftstorage.link"
@@ -46,11 +46,11 @@ export default async function (req: VercelRequest, res: VercelResponse) {
             <meta property="fc:frame" content="vNext" />
             <meta
               property="fc:frame:image"
-              content="https://bafybeigqyny4cmhelkmlzdoke2a4sy5fr2olitsnlzpotjqika4ahbhj4q.ipfs.nftstorage.link"
+              content="https://bafybeicrxexpr4bfry44e7kweraanln4orwbhupz6uphaj2otbo6m4vksu.ipfs.nftstorage.link"
             />
             <meta
               property="fc:frame:button:1"
-              content="Did Degen Mona Lisa send Bobs?"
+              content="What's in your wallet?"
             />
           </head>
         </html>
@@ -68,20 +68,20 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
-        <meta property="og:title" content="Mint Degen Mona Lisa!" />
+        <meta property="og:title" content="Mint Based Mona Lisa" />
         <meta
           property="og:image"
-          content="https://bafybeicrc4fvwwe2jvdzcbfw4ez3yzonfas7mcc2y4sx73snha74ofzaxy.ipfs.nftstorage.link"
+          content="https://bafybeif5ztccfnny7zg7nse4cqnvif3irldjmq5dhfy7wosfley5wuyzpa.ipfs.nftstorage.link"
         />
         <meta property="fc:frame" content="vNext" />
         <meta
           property="fc:frame:image"
-          content="https://bafybeicrc4fvwwe2jvdzcbfw4ez3yzonfas7mcc2y4sx73snha74ofzaxy.ipfs.nftstorage.link"
+          content="https://bafybeif5ztccfnny7zg7nse4cqnvif3irldjmq5dhfy7wosfley5wuyzpa.ipfs.nftstorage.link"
         />
-        <meta property="fc:frame:button:1" content="Mint Degen Mona Lisa!" />
+        <meta property="fc:frame:button:1" content="Mint Based Mona Lisa!" />
         <meta
           name="fc:frame:post_url"
-          content="https://degen-mona-lisa.vercel.app/api/syndicate-farcaster-frame-starter"
+          content="https://based-mona-lisa.vercel.app/api/syndicate-farcaster-frame-starter"
         />
       </head>
     </html>
