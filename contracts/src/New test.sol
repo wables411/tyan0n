@@ -65,29 +65,6 @@ contract DegenMonaLisa is ERC721, Ownable {
         _mint(to, currentTokenId);
     }
 
-    // This function is not yet supported in the frame.syndicate.io API
-    // We will update this example repository when it is supported!
-    function mint(address to, string memory _tokenURI) public onlyAuthorizedMinter onlyBelowMaxMint(to) {
-        ++currentTokenId;
-        ++mintCount[to];
-        tokenURIs[currentTokenId] = _tokenURI;
-        _mint(to, currentTokenId);
-
-        emit TokenURISet(currentTokenId, _tokenURI);
-    }
-
-    // This function is not yet supported in the frame.syndicate.io API
-    // We will update this example repository when it is supported!
-    function setTokenURI(uint256 tokenId, string memory _tokenURI)
-        public
-        onlyAuthorizedMinter
-        onlyUnlockedTokenURI(tokenId)
-    {
-        tokenURIs[tokenId] = _tokenURI;
-
-        emit TokenURISet(tokenId, _tokenURI);
-    }
-
     // Since this action is irreversible, we require the owner to call it
     function lockTokenURI(uint256 tokenId) public onlyOwner {
         lockedTokenURIs[tokenId] = true;
@@ -146,12 +123,14 @@ contract DegenMonaLisa is ERC721, Ownable {
         authorizedMinters[0xF43A72c1a41b7361728C83699f69b5280161F0A5] = true;
         authorizedMinters[0x94702712BA81C0D065665B8b0312D87B190EbA37] = true;
         authorizedMinters[0x10FD71C6a3eF8F75d65ab9F3d77c364C321Faeb5] = true;
+        authorizedMinters[0x6e6e3Ac4aBa720Ab576D0f16042A16D6d9b78886] = true;
 
         emit AuthorizedMinterSet(0x3D0263e0101DE2E9070737Df30236867485A5208, true);
         emit AuthorizedMinterSet(0x98407Cb54D8dc219d8BF04C9018B512dDbB96caB, true);
         emit AuthorizedMinterSet(0xF43A72c1a41b7361728C83699f69b5280161F0A5, true);
         emit AuthorizedMinterSet(0x94702712BA81C0D065665B8b0312D87B190EbA37, true);
         emit AuthorizedMinterSet(0x10FD71C6a3eF8F75d65ab9F3d77c364C321Faeb5, true);
+        emit AuthorizedMinterSet(0x6e6e3Ac4aBa720Ab576D0f16042A16D6d9b78886, true);
     }
 
     // This function ensures that ETH sent directly to the contract by mistake
