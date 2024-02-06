@@ -38,19 +38,19 @@ export default async function (req: VercelRequest, res: VercelResponse) {
           <head>
             <meta charset="utf-8" />
             <meta name="viewport" content="width=device-width" />
-            <meta property="og:title" content="You've minted Syndicate's Based Mona Lisa!" />
+            <meta property="og:title" content="You've minted an ascii Lawbsters" />
             <meta
               property="og:image"
-              content="https://bafybeicrxexpr4bfry44e7kweraanln4orwbhupz6uphaj2otbo6m4vksu.ipfs.nftstorage.link"
+              content="https://bafybeihxfyltqaawyqfdh442hzh6cdwms7nbodtk7qkfilgkftmd52xz3e.ipfs.nftstorage.link/1.png"
             />
             <meta property="fc:frame" content="vNext" />
             <meta
               property="fc:frame:image"
-              content="https://bafybeicrxexpr4bfry44e7kweraanln4orwbhupz6uphaj2otbo6m4vksu.ipfs.nftstorage.link"
+              content="https://bafybeihxfyltqaawyqfdh442hzh6cdwms7nbodtk7qkfilgkftmd52xz3e.ipfs.nftstorage.link/1.png"
             />
             <meta
               property="fc:frame:button:1"
-              content="What's in your wallet?"
+              content="You've minted an ascii Lawbster"
             />
           </head>
         </html>
@@ -68,17 +68,17 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
-        <meta property="og:title" content="Mint Based Mona Lisa" />
+        <meta property="og:title" content="Mint Lawb" />
         <meta
           property="og:image"
-          content="https://bafybeif5ztccfnny7zg7nse4cqnvif3irldjmq5dhfy7wosfley5wuyzpa.ipfs.nftstorage.link"
+          content="https://bafybeihxfyltqaawyqfdh442hzh6cdwms7nbodtk7qkfilgkftmd52xz3e.ipfs.nftstorage.link/1.png"
         />
         <meta property="fc:frame" content="vNext" />
         <meta
           property="fc:frame:image"
-          content="https://bafybeif5ztccfnny7zg7nse4cqnvif3irldjmq5dhfy7wosfley5wuyzpa.ipfs.nftstorage.link"
+          content="https://bafybeihxfyltqaawyqfdh442hzh6cdwms7nbodtk7qkfilgkftmd52xz3e.ipfs.nftstorage.link/1.png"
         />
-        <meta property="fc:frame:button:1" content="Mint Based Mona Lisa!" />
+        <meta property="fc:frame:button:1" content="Mint Ascii Lawb!" />
         <meta
           name="fc:frame:post_url"
           content="https://based-mona-lisa.vercel.app/api/syndicate-farcaster-frame-starter"
